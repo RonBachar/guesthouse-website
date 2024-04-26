@@ -35,9 +35,10 @@
         <option value="he">Hebrew</option>
       </select> -->
 
-      <select #langSelect (change)="translateService.use(langSelect.value)">
-        <option *ngFor="let lang of translateService.getLangs()" [value]="lang" [selected]="lang === translateService.currentLang">{{ lang }}</option>
-      </select>
+      <!-- <select #langSelect (change)="translateService.use(langSelect.value)">
+        <option *ngFor="let lang of translateService.getLangs()" [value]="lang"
+          [selected]="lang === translateService.currentLang">{{ lang }}</option>
+      </select> -->
 
 
       }
@@ -57,7 +58,11 @@
 
 
     </mat-toolbar>
-    <!-- Add Content Here -->
-    <ng-content></ng-content>
+
+    <video  class="background-video" loop muted autoplay preload="auto">
+      <source src="../../assets/video/video.mp4" type="video/mp4">
+      Your Browser does not support the video
+    </video>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
