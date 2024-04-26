@@ -1,0 +1,63 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: (!(isHandset$ | async))}" fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>MIKASA LOGO</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">אודותנו</a>
+      <a mat-list-item href="#">הזמנות</a>
+      <a mat-list-item href="#">חדרים</a>
+      <a mat-list-item href="#">שירותים</a>
+      <a mat-list-item href="#">ארוחות הבוקר</a>
+      <a mat-list-item href="#">פעילויות</a>
+      <a mat-list-item href="#">אירועים</a>
+      <a mat-list-item href="#">יצירת קשר</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+
+      @if (!(isHandset$ | async)) {
+
+      <a href="#">{{'אודותנו'| translate }}</a>
+      <a href="#">הזמנות</a>
+      <a href="#">חדרים</a>
+      <a href="#">שירותים</a>
+      <span href="#">LOGO</span>
+      <a href="#">ארוחות הבוקר</a>
+      <a href="#">פעילויות</a>
+      <a href="#">אירועים</a>
+      <a href="#">יצירת קשר</a>
+
+      <!-- <select name="" id="" (change)="translate($event)">
+        <option value="en">English</option>
+        <option value="he">Hebrew</option>
+      </select> -->
+
+      <select #langSelect (change)="translateService.use(langSelect.value)">
+        <option *ngFor="let lang of translateService.getLangs()" [value]="lang" [selected]="lang === translateService.currentLang">{{ lang }}</option>
+      </select>
+
+
+      }
+
+
+
+      @if (isHandset$ | async) {
+      <a href="#">LOGO</a>
+      }
+
+
+      @if (isHandset$ | async) {
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
