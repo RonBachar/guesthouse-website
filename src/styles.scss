@@ -23,7 +23,6 @@ $guesthouse-website-theme: mat.define-light-theme((color: (primary: $guesthouse-
         accent: $guesthouse-website-accent,
         warn: $guesthouse-website-warn,
       ),
-      typography: mat.define-typography-config(),
       density: 0));
 
 // Include theme styles for core and each component used in your app.
@@ -32,13 +31,28 @@ $guesthouse-website-theme: mat.define-light-theme((color: (primary: $guesthouse-
 @include mat.all-component-themes($guesthouse-website-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 html,
 body {
   height: 100%;
+  font-family: "Amatic SC", sans-serif;
+  font-style: normal;
+
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: 3rem
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
 }
