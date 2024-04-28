@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -16,13 +15,25 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { CarouselComponent } from './carousel/carousel.component';
+import { HomeComponent } from './shared/features/home/home.component';
+import { CarouselComponent } from './shared/features/carousel/carousel.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { RainComponent } from './shared/features/rooms/rain/rain.component';
+import { ForestComponent } from './shared/features/rooms/forest/forest.component';
+import { RoomsComponent } from './shared/features/rooms/rooms.component';
+import { BookingComponent } from './shared/features/booking/booking.component';
+import { FacilitiesComponent } from './shared/features/facilities/facilities.component';
+import { BreakfastComponent } from './shared/features/breakfast/breakfast.component';
+import { ActivitiesComponent } from './shared/features/activities/activities.component';
+import { EventsComponent } from './shared/features/events/events.component';
+import { ContactComponent } from './shared/features/contact/contact.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { AboutComponent } from './shared/features/about/about.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 
 export function translateHttpLoaderFactory(http: HttpClient) {
-
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
 }
@@ -31,10 +42,20 @@ export function translateHttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     HomeComponent,
-    FooterComponent,
-    CarouselComponent
+    CarouselComponent,
+    PageNotFoundComponent,
+    RainComponent,
+    ForestComponent,
+    RoomsComponent,
+    BookingComponent,
+    FacilitiesComponent,
+    BreakfastComponent,
+    ActivitiesComponent,
+    EventsComponent,
+    ContactComponent,
+    NavbarComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +66,14 @@ export function translateHttpLoaderFactory(http: HttpClient) {
     MatIconModule,
     MatListModule,
     FormsModule,
-    MatFormFieldModule, MatSelectModule, MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatGridListModule,
+    MatCardModule,
     TranslateModule.forRoot({
       defaultLanguage: 'he'
-  }),
+    }),
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {

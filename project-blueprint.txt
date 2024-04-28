@@ -1,0 +1,80 @@
+project-root
+|-- /documentation
+|   |-- /designs
+|       |-- project-blueprint.pdf
+|-- /src
+|   |-- /app
+|       |-- /core
+|       |   |-- /services
+|       |   |   |-- authentication.service.ts
+|       |   |   |-- booking.service.ts
+|       |   |-- /models
+|       |       |-- room.model.ts
+|       |       |-- booking.model.ts
+|       |   |-- core.module.ts
+|       |   |-- core-routing.module.ts
+|       |-- /shared
+|       |   |-- /components
+|       |   |   |-- footer.component.ts
+|       |   |   |-- navbar.component.ts
+|       |   |   |-- page-not-found.component.ts
+|       |   |-- /pipes
+|       |   |   |-- custom-pipe.pipe.ts
+|       |   |-- /directives
+|       |       |-- highlight.directive.ts
+|       |   |-- /models
+|       |       |-- user.model.ts
+|       |   |-- shared.module.ts
+|       |-- /features
+|       |   |-- /home
+|       |   |   |-- home.component.ts
+|       |   |   |-- home.component.html
+|       |   |   |-- home.component.scss
+|       |   |-- /rooms
+|       |   |   |-- /rain
+|       |   |   |   |-- rain-room.component.ts
+|       |   |   |   |-- rain-room.component.html
+|       |   |   |   |-- rain-room.component.scss
+|       |   |   |-- /forest
+|       |   |       |-- forest-room.component.ts
+|       |   |       |-- forest-room.component.html
+|       |   |       |-- forest-room.component.scss
+|       |   |   |-- rooms.component.ts
+|       |   |   |-- rooms.component.html
+|       |   |   |-- rooms.component.scss
+|       |   |-- /bookings
+|       |   |   |-- booking.component.ts
+|       |   |   |-- booking.component.html
+|       |   |   |-- booking.component.scss
+|       |   |-- /facilities
+|       |   |   |-- facilities.component.ts
+|       |   |   |-- facilities.component.html
+|       |   |   |-- facilities.component.scss
+|       |   |-- /breakfast
+|       |   |   |-- breakfast.component.ts
+|       |   |   |-- breakfast.component.html
+|       |   |   |-- breakfast.component.scss
+|       |   |-- /activities
+|       |   |   |-- activities.component.ts
+|       |   |   |-- activities.component.html
+|       |   |   |-- activities.component.scss
+|       |   |-- /events
+|       |   |   |-- events.component.ts
+|       |   |   |-- events.component.html
+|       |   |   |-- events.component.scss
+|       |   |-- /contact
+|       |   |   |-- contact.component.ts
+|       |   |   |-- contact.component.html
+|       |   |   |-- contact.component.scss
+|       |     
+|       |-- /app-routing.module.ts
+|       |-- app.component.ts
+|       |-- app.component.html
+|       |-- app.module.ts
+|-- /assets
+|   |-- /images
+|   |-- /styles
+|       |-- styles.scss
+|-- /environments
+    |-- environment.ts
+    |-- environment.prod.ts

@@ -1,0 +1,91 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: (!(isHandset$ | async))}" fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <a mat-button routerLink="/">
+        <mat-icon>home</mat-icon>
+
+      </a>
+    </mat-toolbar>
+    <!-- THE SIDE BAR ! -->
+    <mat-nav-list>
+      <a mat-list-item routerLink="/about">אודות</a>
+      <a mat-list-item routerLink="/booking">הזמנות</a>
+      <a mat-list-item routerLink="/rooms">חדרים</a>
+
+      <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let room of rooms" [value]="room.value">
+            {{room.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <a mat-list-item routerLink="/facilities">שירותים</a>
+      <a mat-list-item routerLink="/breakfast">ארוחות הבוקר</a>
+      <a mat-list-item routerLink="/activities">פעילויות</a>
+      <a mat-list-item routerLink="/events">אירועים</a>
+      <a mat-list-item routerLink="/contact">יצירת קשר</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- THE MAIN BAR ! -->
+
+    <mat-toolbar>
+      @if (!(isHandset$ | async)) {
+
+      <a mat-button routerLink="/about">אודות</a>
+      <a mat-button routerLink="/booking">הזמנות</a>
+
+      <mat-form-field>
+        <mat-label>סוויטות</mat-label>
+        <mat-select (selectionChange)="navigate(selectedRoom)" [(value)]="selectedRoom">
+          <mat-option *ngFor="let room of rooms" [value]="room">
+            {{ room.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+
+
+      <a mat-button routerLink="/facilities">מתקנים</a>
+
+      <a mat-button routerLink="/">
+        <mat-icon>home</mat-icon>
+
+      </a>
+
+
+      <a mat-button routerLink="/breakfast">ארוחות הבוקר</a>
+      <a mat-button routerLink="/activities">פעילויות</a>
+      <a mat-button routerLink="/events">אירועים</a>
+      <a mat-button routerLink="/contact">יצירת קשר</a>
+
+
+
+      }
+
+
+
+      @if (isHandset$ | async) {
+      <img src="" alt="Mikasa Logo">
+
+      }
+
+
+      @if (isHandset$ | async) {
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+
+
+    </mat-toolbar>
+    
+    <ng-content></ng-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
