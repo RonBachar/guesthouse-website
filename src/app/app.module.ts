@@ -31,7 +31,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AboutComponent } from './shared/features/about/about.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
-
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -55,7 +55,8 @@ export function translateHttpLoaderFactory(http: HttpClient) {
     EventsComponent,
     ContactComponent,
     NavbarComponent,
-    AboutComponent
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
