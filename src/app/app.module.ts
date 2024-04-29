@@ -28,10 +28,12 @@ import { ActivitiesComponent } from './shared/features/activities/activities.com
 import { EventsComponent } from './shared/features/events/events.component';
 import { ContactComponent } from './shared/features/contact/contact.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { AboutComponent } from './shared/features/about/about.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { AboutComponent } from './shared/features/about/about.component';
+import { ContactFormComponent } from './shared/components/contact-form/contact-form.component';
+
 
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -55,8 +57,9 @@ export function translateHttpLoaderFactory(http: HttpClient) {
     EventsComponent,
     ContactComponent,
     NavbarComponent,
+    FooterComponent,
     AboutComponent,
-    FooterComponent
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

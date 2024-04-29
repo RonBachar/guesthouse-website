@@ -14,7 +14,6 @@
   justify-content: center;
   height: 90px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  /* Define linear gradient */
   gap: 25px;
   border-bottom: 1px solid white !important;
 }
@@ -36,7 +35,7 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 10px;
-    color: white !important;
+    text-decoration-color: rgb(193,193,193);
   }
 }
 

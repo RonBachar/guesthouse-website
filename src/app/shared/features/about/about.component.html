@@ -1,1 +1,57 @@
-<h1>About Works!</h1>
+<section class="about-hero">
+    <div class="hero-text">
+        <h1>השקט של הצפון</h1>
+    </div>
+</section>
+
+
+<div class="about-container">
+
+    <div class="about-content">
+
+        <h1>אודות</h1>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas velit quasi pariatur expedita, alias soluta
+            laborum
+            repudiandae iste ratione odit similique ut totam accusantium, iusto molestias dolore quidem. Modi delectus
+            quam
+            explicabo expedita, ipsa voluptas inventore unde amet pariatur quisquam ad. Quam similique doloribus sed
+            numquam
+            aliquid maxime rerum id.</p>
+        <img src="../../../../assets/images/about/about-01.jpg" alt="">
+
+        <p>העבודה עם אדמה היא עולם אחר לעומת עבודה עם בטון או חומרי בניה תעשייתיים. האדמה היא סלחנית ונדיבה. אפשר
+            ל"החיות"
+            חומר
+            שמתייבש ולפסל אותה במשך זמן רב, כל תקופה נוספת שכבה שמכסה את השכבה הישנה ותהליך הבניה נמשך.
+
+            הבקתות בימי מדבר מקיימות דרך חיים של גישה איטית ומתחשבת ששמה לעצמה את החיבור לאדמה והסביבה לפני יעילות
+            ותוחלת.
+
+            החוויה בימי מדבר היא חוויה בראשיתית, גולמית, מסע בזמן, כמיהה להתמזגות עם הטבע העוצמתי של המדבר.</p>
+
+        <img src="../../../../assets/images/about/about-02.jpeg" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas velit quasi pariatur expedita, alias soluta
+            laborum
+            repudiandae iste ratione odit similique ut totam accusantium, iusto molestias dolore quidem. Modi delectus
+            quam
+            explicabo expedita, ipsa voluptas inventore unde amet pariatur quisquam ad. Quam similique doloribus sed
+            numquam
+            aliquid maxime rerum id.</p>
+        <img src="../../../../assets/images/about/about-02.jpeg" alt="">
+    </div>
+
+
+    <div class="about-gallery">
+        <mat-grid-list cols="3" rowHeight="350px" gutterSize="21px">
+            <mat-grid-tile *ngFor="let image of images">
+                <img mat-card-image [src]="image.url" alt="Gallery image" width="100%" height="100%">
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+
+    <app-contact-form></app-contact-form>
+
+
+</div>
