@@ -13,14 +13,7 @@
       <a mat-list-item routerLink="/booking">הזמנות</a>
       <a mat-list-item routerLink="/rooms">חדרים</a>
 
-      <mat-form-field>
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let room of rooms" [value]="room.value">
-            {{room.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+
 
       <a mat-list-item routerLink="/facilities">שירותים</a>
       <a mat-list-item routerLink="/breakfast">ארוחות הבוקר</a>
@@ -36,34 +29,22 @@
     <mat-toolbar-row>
       @if (!(isHandset$ | async)) {
 
-      <a mat-button routerLink="/about">אודות</a>
-      <a mat-button routerLink="/booking">הזמנות</a>
-
-      <mat-form-field>
-        <mat-label>סוויטות</mat-label>
-        <mat-select (selectionChange)="navigate(selectedRoom)" [(value)]="selectedRoom">
-          <mat-option *ngFor="let room of rooms" [value]="room">
-            {{ room.value }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-
-
-      <a mat-button routerLink="/facilities">מתקנים</a>
-
-      <a routerLink="/">
-        <img src="../../../../assets/images/logo/mikasa.png" alt="Mikasa Logo">
-      </a>
-
-
-      <a mat-button routerLink="/breakfast">ארוחות הבוקר</a>
-      <a mat-button routerLink="/activities">פעילויות</a>
-      <a mat-button routerLink="/events">אירועים</a>
-      <a mat-button routerLink="/contact">יצירת קשר</a>
-
-
-
+        <a mat-button routerLink="/contact">יצירת קשר</a>
+        <a mat-button routerLink="/events">אירועים</a>
+        <a mat-button routerLink="/activities">אטרקציות</a>
+        <a mat-button routerLink="/breakfast">ארוחות הבוקר</a>
+        
+        <a routerLink="/">
+          <img src="../../../../assets/images/logo/mikasa.png" alt="Mikasa Logo">
+        </a>
+        <a mat-button routerLink="/facilities">מתקנים</a>
+        <button mat-button [matMenuTriggerFor]="roomsMenu">חדרים <mat-icon>arrow_drop_down</mat-icon></button>
+        <mat-menu #roomsMenu="matMenu">
+          <button mat-menu-item routerLink="/forest">יער</button>
+          <button mat-menu-item routerLink="/rain">גשם</button>
+        </mat-menu>
+        <a mat-button routerLink="/booking">הזמנות</a>
+        <a mat-button routerLink="/about">אודות</a>
       }
 
 

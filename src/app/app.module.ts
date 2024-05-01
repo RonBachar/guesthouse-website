@@ -33,6 +33,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { AboutComponent } from './shared/features/about/about.component';
 import { ContactFormComponent } from './shared/components/contact-form/contact-form.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 export function translateHttpLoaderFactory(http: HttpClient) {
@@ -75,6 +76,7 @@ export function translateHttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     MatGridListModule,
     MatCardModule,
+    MatMenuModule,
     TranslateModule.forRoot({
       defaultLanguage: 'he'
     }),

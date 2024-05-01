@@ -31,11 +31,26 @@ a {
   color: white !important;
   font-size: 30px;
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 10px;
-    text-decoration-color: rgb(193,193,193);
+    text-decoration-color: rgb(193, 193, 193);
   }
 }
 
+
+/* Font size and color for text within menu items */
+button.mat-menu-item {
+  font-size: 14px;
+  color: white !important;
+  /* Dark grey color for menu item text */
+}
+
+/* Style for icons within the toolbar */
+mat-icon {
+  font-size: 24px;
+  /* Larger icons */
+  color: white;
+  /* Matching icon color with toolbar text */
+}
